@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Api betvictor
+  description: Api betvictor
+  version: "0.0.1"
+
+paths:
+  /notImplemented:
+    get:
+      operationId: notImplemented
+      responses:
+        '501':
+          description: not implemented
+
+components:
+  schemas:
+    ApiError:
+      type: object
+      description: Object returned in case of error
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          description: Error code associated to the error
+          example: BETVICTOR_ERROR_X
+        message:
+          type: string
+          description: Error message
+          example: Error message
+    RetrievedTextInfoResponse:
+      required:
+        - freq_word
+      type: object
+      properties:
+        freq_word:
+          type: string
+        avg_paragraph_size:
+          type: integer
+          format: int64
+        avg_paragraph_processing_time:
+          type: integer
+          format: int64
+        total_processing_time:
+          type: integer
+          format: int64
